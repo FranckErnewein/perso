@@ -1,0 +1,23 @@
+body{font-family:"Lucida Console", monospace;font-size:12px;background:#000;}
+
+a{color:#000;}
+
+#nav{position:fixed;width:100%;}
+
+#nav hgroup{display:inline-block;padding:0;margin:0;}
+#nav h1{display:inline-block;}
+#nav h1 a{padding:6px;}
+#nav h2{display:inline-block;font-size:10px;color:#aaa;}
+#nav nav{display:inline-block;}
+#nav ul{display:inline-block;}
+#nav li{display:inline-block;border-bottom:10px solid #999;margin:0 5px;}
+#nav a{display:inline-block;text-decoration:none;color:#999;padding:15px 25px 1px 1px;}
+#nav a span{display:inline-block;text-decoration:none;border-bottom:0px solid #000;width:120px;cursor:pointer;}
+#nav a:hover{background:url(img/repeat_grid.png);}
+#nav a:hover span{}
+
+
+#content{padding:80px 0 30px 0;background:#fff;}
+#content h1{border-bottom:1px solid #000;font-size:20px;padding:20px;}
+#content{}
+
