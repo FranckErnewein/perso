@@ -25,18 +25,36 @@ view.Menu = Backbone.View.extend({
 		var self = this;
 		$('li', this.el).each(function(){
 			var a = $('a', this);
-			self.sub[ a.attr('href').replace('#','') ] = $(document.createElement('ul') );
+			var ul = $(document.createElement('ul') )
+			ul.appendTo( this );
+			self.sub[ a.attr('href').replace('#','') ] = ul;
 		});
 	},
 
-	listen:function( collection, tag ){
+	listen:function( collection ){
 		var self = this;
+		var tag = collection.name;
 		collection.bind('add', function(model){
-			console.log('??')
-			self.sub[ tag ].append( '<li><a href="#'+tag+'/'+model.id+'">'+model.title+'</a></li>' )
+			self.sub[ tag ].append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' )
 		});
-		
+	},
+	
+	open:function( submenu ){
+		$('ul.on', this.el).removeClass('on');
+		this.sub[ submenu ].addClass('on');
 	}
+	
+});
+
+
+view.Page = view.TemplateView.extend({
+	
+	initialize:function(){
+		this.el = $(document.createElement('div'));
+		$('#content').empty().append( this.el );
+
+	}
+	
 });
 
 

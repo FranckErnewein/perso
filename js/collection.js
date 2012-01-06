@@ -7,7 +7,12 @@ collection.Base = Backbone.Collection.extend({
 	}
 });
 
-collection.Sketch = collection.Base.extend({
+collection.Sketchs = collection.Base.extend({
 	model:model.Sketch,
 	name:'sketch'
+});
+
+collection.Works = collection.Base.extend({
+	model:model.Work,
+	name:'work'
 });
