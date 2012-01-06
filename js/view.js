@@ -1,22 +1,37 @@
 
 var view = {};
 
+
 view.TemplateView = Backbone.View.extend({
 	
 	render:function(){
-		this.el.empty();
-		if( !this._template ){
-			this._template = $( document.getElementById( this.template ) ).html();
-		}
-		this.el.html( _.template( this._template, this ) );
-		if( typeof this.onRender == 'function'){
-			this.onRender();
-		}
-		this.trigger( 'render', this );
+		var self = this;
+		
+		if( !this.templateList[this.template] ){
+            if(!this.template){
+                throw new Error('template is undefined');
+            }
+            $.ajax({
+                cache:false,
+                url:'template/' + this.template + '.html',
+                async:false,
+                success:function(xhr){
+                    self.templateList[self.template] = _.template( xhr );
+                }
+            });
+         
+        }
+        $(this.el).html(this.templateList[this.template].call( this , this.model ));
+        if(typeof this.onRender == 'function'){
+            this.onRender();
+        }
+        this.trigger('render');
+
+        return this;
 	}
 	
 });
-
+view.TemplateView.prototype.templateList = {}
 
 view.Menu = Backbone.View.extend({
 	
@@ -27,20 +42,23 @@ view.Menu = Backbone.View.extend({
 			var a = $('a', this);
 			var ul = $(document.createElement('ul') )
 			ul.appendTo( this );
-			self.sub[ a.attr('href').replace('#','') ] = ul;
+			//self.sub[ a.attr('href').replace('#','') ] = ul;
+			self.sub[ a.attr('href').replace('#','') ] = $(this);
 		});
 	},
 
 	listen:function( collection ){
 		var self = this;
 		var tag = collection.name;
+		var ul = $('ul', self.sub[ tag ]); 
 		collection.bind('add', function(model){
-			self.sub[ tag ].append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' )
+			ul.append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' )
 		});
 	},
 	
 	open:function( submenu ){
-		$('ul.on', this.el).removeClass('on');
+		//console.log(submenu, this.sub)
+		$('li.on', this.el).removeClass('on');
 		this.sub[ submenu ].addClass('on');
 	}
 	
@@ -48,15 +66,34 @@ view.Menu = Backbone.View.extend({
 
 
 view.Page = view.TemplateView.extend({
-	
 	initialize:function(){
-		this.el = $(document.createElement('div'));
-		$('#content').empty().append( this.el );
-
+		var self = this;
+		this.collection.bind('reset', function(){
+			self.render();
+		});
+	},
+	
+	render:function(){
+		this.el.hide();
+		view.TemplateView.prototype.render.call(this);
+		this.el.fadeIn();
 	}
 	
 });
 
+view.Work = view.Page.extend({
+	
+	template:'work'
+	
+});
+
+view.Sketch = view.Page.extend({
+	template:'sketch'
+});
+
+view.About = view.Page.extend({
+	template:'work'
+});
 
 
 

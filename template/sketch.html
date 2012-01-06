@@ -1,0 +1,10 @@
+<div id="sketch-page">
+	<nav>
+		<% console.log(this); %>
+		<% this.collection.each(function( model ){ %>
+			<a href="#sketch/<%= model.id %>"><%= model.get('title') %></a>		
+		<% }); %>
+		
+	</nav>
+
+</div>

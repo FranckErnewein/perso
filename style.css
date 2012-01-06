@@ -9,13 +9,15 @@ canvas{display:block;margin:0;padding:0;}
 #nav ul{padding:5% 0;text-align:left;}
 #nav ul li{margin:15px 0;}
 #nav ul li a{display:inline-block;padding:0 4px;text-decoration:none;color:#000;border-left:120px solid #000;}
+#nav ul li.on a{background:#000;color:#fff;}
 #nav ul li ul{padding:0;display:none;}
-#nav ul li ul.on{display:block;}
+#nav ul li.on ul{display:block;}
 #nav ul li ul li{padding:0;margin:5px 0 5px 0;margin:0;border-bottom:1px solid #ddd;}
 #nav ul li ul li a{display:block;padding:4px 0 4px 25px;border:0 none #eee;text-transform:none;}
-#nav ul li ul li a:hover{background:yellow;color:#000;}
+#nav ul li.on ul li a{background:none;color:#000;}
 /*#nav ul li a:hover{background:rgba(0,0,0,0.8);color:#fff;}*/
-#nav a:hover{background:#000;color:#fff;}
+#nav ul li.on ul li a:hover,
+#nav a:hover{background:yellow;}
 
 .articles{position:absolute;top:5%;left:20%;}
 
@@ -59,3 +61,9 @@ canvas{display:block;margin:0;padding:0;}
 #content .box a:hover{background:yellow;}
 #content .box a img{opacity:0.1;}
 #content .box a:hover img{opacity:1;}
+
+
+#sketch-page{ padding:10px 10px 10px 21%;}
+
+#sketch-page nav{}
+#sketch-page nav a{display:block;}
