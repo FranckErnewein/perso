@@ -20,8 +20,8 @@ $(document).ready(function(){
 	app.view.menu.listen(app.collection.sketchs);
 	app.view.menu.listen(app.collection.works);
 	
-	app.collection.sketchs.fetch({add:true});
-	app.collection.works.fetch({add:true});
+	//app.collection.sketchs.fetch({add:true});
+	//app.collection.works.fetch({add:true});
 	
 	Backbone.history.start();
 	

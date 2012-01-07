@@ -18,8 +18,8 @@ router.Main = Backbone.Router.extend({
 			var viewName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
 			var domNode = $(document.createElement('div'));
 			this.getContentNode().empty().append( domNode );
-			this.currentView = new view[ viewName ]({el:domNode, collection:app.collection[pageName+'s'] });
-			this.currentView.render();
+			this.currentPage = new view[ viewName ]({el:domNode, collection:app.collection[pageName+'s'] });
+			this.currentPage.render();
 			this.trigger('changePage', pageName);
 			
 		}

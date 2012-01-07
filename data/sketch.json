@@ -1,12 +1,18 @@
 [
+    /*
 	{
 		"id":"digitalcrystal",
 		"title":"Digital Crystal",
 		"webgl":true
 	},
+    */
 	{
 		"id":"mucus",
 		"title":"Mucus"
+	},
+    {
+		"id":"butterfly",
+		"title":"Butterfly"
 	},
 	{
 		"id":"morphingweb",

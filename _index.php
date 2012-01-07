@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Franck Ernewein</title>
+	<meta name="author" content="Franck Ernewein" />
+	<style type="text/css">
+		@import url(reset.css);
+		@import url(style.css);
+	</style>
+	<script src="js/lib/jquery-1.7.1.min.js"></script>
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/backbone.js"></script>
+    <script src="js/lib/processing-1.3.6.min.js"></script>
+	<script src="js/model.js"></script>
+	<script src="js/collection.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/view.js"></script>
+	<script src="js/app.js"></script>
+    <script>
+        app.collection.sketchs.add( <?php include 'data/sketch.json'; ?>);
+        app.collection.works.add( <?php include 'data/work.json'; ?>);
+    </script>
+</head>
+<body>
+<div id="global">
+	<div id="content">
+		<div id="nav">
+			<hgroup>
+				<h1><a href="#">Franck Ernewein</a></h1>
+				<h2>Front end developper</h2>
+			</hgroup>
+			<ul>
+				<li><a href="#sketch">+ Sketch</a></li>
+				<li><a href="#work">+ Works</a></li>
+				<li><a href="#about">+ About</a></li>
+			</ul>
+		</div>
+		<div id="page"></div>
+	</div>
+</div>
+</body>
+</html>

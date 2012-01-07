@@ -1,4 +1,9 @@
 
+
+
+
+
+
 var view = {};
 
 
@@ -26,7 +31,6 @@ view.TemplateView = Backbone.View.extend({
             this.onRender();
         }
         this.trigger('render');
-
         return this;
 	}
 	
@@ -52,7 +56,10 @@ view.Menu = Backbone.View.extend({
 		var tag = collection.name;
 		var ul = $('ul', self.sub[ tag ]); 
 		collection.bind('add', function(model){
-			ul.append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' )
+			ul.append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' );
+		});
+        collection.each(function(model){
+			ul.append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' );
 		});
 	},
 	
@@ -68,9 +75,10 @@ view.Menu = Backbone.View.extend({
 view.Page = view.TemplateView.extend({
 	initialize:function(){
 		var self = this;
-		this.collection.bind('reset', function(){
+		this.collection.bind('reset', function(col){
 			self.render();
 		});
+        
 	},
 	
 	render:function(){
@@ -88,7 +96,47 @@ view.Work = view.Page.extend({
 });
 
 view.Sketch = view.Page.extend({
-	template:'sketch'
+	template:'sketch',
+    
+    focus:function( id ){
+        if(!this.content) this.content = $('#sketch-page');
+
+        var model = this.collection.get(id);
+        if(this.proc && this.proc.sketch){
+            this.proc.sketch.noLoop();
+        }
+        this.proc = new view.Processing( {pde:'processing/'+id+'/'+id+'.pde'} );
+        this.content.empty().append( this.proc.el );
+        //$('#nav').hide();
+    }
+
+    
+    
+});
+
+view.Processing = Backbone.View.extend({
+
+
+    initialize:function(){
+        var self = this;
+
+        this.el = document.createElement('canvas');
+
+
+        $.ajax({
+            url:this.options.pde,
+            success:function( pde ){
+                
+                var compiled = Processing.compile( pde );
+                self.sketch = new Processing( self.el, compiled );
+                
+            }
+        });
+        
+
+    }
+
+
 });
 
 view.About = view.Page.extend({
