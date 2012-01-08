@@ -56,12 +56,19 @@ view.Menu = Backbone.View.extend({
 		var tag = collection.name;
 		var ul = $('ul', self.sub[ tag ]); 
 		collection.bind('add', function(model){
-			ul.append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' );
+            self.addItem(ul, model, tag);
 		});
         collection.each(function(model){
-			ul.append( '<li><a href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' );
+            self.addItem(ul, model, tag);
 		});
 	},
+
+    addItem:function(ul, model, tag){
+        ul.append( '<li class="'+tag+'"><a title="'+model.get('title')+'" href="#'+tag+'/'+model.id+'">'+( (tag != 'sketch') ? model.get('title') : '<img src="img/sketch/'+model.id+'.png"/>' )+'</a></li>' );
+        if(tag){
+            
+        }
+    },
 	
 	open:function( submenu ){
 		//console.log(submenu, this.sub)
@@ -73,65 +80,109 @@ view.Menu = Backbone.View.extend({
 
 
 view.Page = view.TemplateView.extend({
-	initialize:function(){
-		var self = this;
-		this.collection.bind('reset', function(col){
-			self.render();
-		});
-        
-	},
-	
-	render:function(){
-		this.el.hide();
-		view.TemplateView.prototype.render.call(this);
-		this.el.fadeIn();
-	}
+
+   
 	
 });
 
 view.Work = view.Page.extend({
 	
-	template:'work'
+	template:'work',
+
+    onRender:function(){
+        var self = this;
+        var h1 = $('h1', this.el);
+        var p = $('p', this.el);
+        var fade = $('.fadein', this.el);
+        var tags = $('.tags li');
+
+        tags.hide();
+        fade.hide();
+        if(!self.model.get('desc')) p.hide();
+        
+        h1.randomize( null, 500, function(){
+            if(self.model.get('desc')) p.randomize();
+            fade.fadeIn();
+            tags.each(function(i, tag){
+               var tag = $(tag);
+               window.setTimeout(function(){
+                  tag.fadeIn();
+               }, i*320);
+            });
+        });
+
+
+
+    }
+    
 	
+});
+
+view.Works = view.Page.extend({
+
+	template:'works'
+
 });
 
 view.Sketch = view.Page.extend({
 	template:'sketch',
-    
-    focus:function( id ){
-        if(!this.content) this.content = $('#sketch-page');
 
-        var model = this.collection.get(id);
+    onRender:function(){
+        var self = this;
+        
         if(this.proc && this.proc.sketch){
             this.proc.sketch.noLoop();
         }
-        this.proc = new view.Processing( {pde:'processing/'+id+'/'+id+'.pde'} );
-        this.content.empty().append( this.proc.el );
-        //$('#nav').hide();
-    }
+        this.proc = new view.Processing( { pde:'processing/'+this.model.id+'/'+this.model.id+'.pde'} );
+        var canvas = $(this.proc.el);
+        var canvasContent = $('.canvas-content', this.el);
+        canvasContent.hide();
+        var h1 = $('h1', this.el);
+        var p = $('.help', this.el);
+        h1.randomize( this.model.get('title')+' >_' , null, function(){
+            if(self.model.get('help')){
+                p.randomize( self.model.get('help'));
+            }
+            
 
-    
+            canvasContent.append( canvas ).fadeIn();
+        });
+    }
     
 });
 
+view.Sketchs = view.Page.extend({
+    template:'sketchs'
+    
+});
+
+
+
+
 view.Processing = Backbone.View.extend({
 
+    cache:{},
+    tagName:'canvas',
+    isReady:false,
 
     initialize:function(){
         var self = this;
 
-        this.el = document.createElement('canvas');
+        if(self.cache[this.options.pde]){
+            self.sketch = new Processing( self.el, self.cache[this.options.pde] );
+        }else{
+            $.ajax({
+                url:this.options.pde,
+                success:function( pde ){
+                    self.cache[self.options.pde] = Processing.compile( pde );
+                    self.sketch = new Processing( self.el, self.cache[self.options.pde] );
+                    self.trigger('ready');
+                    self.isReady=true;
+                }
+            });
+        }
 
-
-        $.ajax({
-            url:this.options.pde,
-            success:function( pde ){
-                
-                var compiled = Processing.compile( pde );
-                self.sketch = new Processing( self.el, compiled );
-                
-            }
-        });
+        
         
 
     }

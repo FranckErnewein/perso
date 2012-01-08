@@ -1,11 +1,12 @@
 [
 	{
 		"id":"hiram",
-		"title":"Hiram Finance"
+		"title":"Hiram Finance",
+        "tag":[ "HTML", "Javascript", "CSS" ]
 	},
 	{
-		"id":"bp",
-		"title":"Banque Populaire",
+		"id":"natixis",
+		"title":"Banque Populaire / Natixis",
 		"url":"http://www.epargne-hisseo.com/",
 		"tag":[ "HTML", "Javascript", "CSS" ]
 	},
@@ -16,7 +17,7 @@
 		"tag":[ "HTML", "Javascript", "CSS" ]
 	},
 	{
-		"id":"orange",
+		"id":"ocs",
 		"title":"Orange",
 		"tag":[ "Action Script", "Flash" ]
 	},
@@ -33,7 +34,7 @@
 		"tag":[ "HTML", "Javascript", "CSS" ]
 	},
 	{
-		"id":"bnp",
+		"id":"gestionflexible",
 		"title":"BNP Paribas",
 		"url":"http://generali.fr",
 		"tag":[ "HTML", "Javascript", "CSS" ]

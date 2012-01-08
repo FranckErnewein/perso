@@ -9,6 +9,7 @@
 		@import url(style.css);
 	</style>
 	<script src="js/lib/jquery-1.7.1.min.js"></script>
+    <script src="js/lib/jquery.randomize.js"></script>
 	<script src="js/lib/underscore.js"></script>
 	<script src="js/lib/backbone.js"></script>
     <script src="js/lib/processing-1.3.6.min.js"></script>

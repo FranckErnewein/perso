@@ -127,7 +127,7 @@ void setup() {
   background(0);
   size(1024, 768);
   //p = new Particule(width/2, height/2);
-  cloud = new Cloud(4000);
+  cloud = new Cloud(2000);
 }
 
 void draw() {

@@ -44,7 +44,9 @@ class Particule {
       //line(location.x,location.y, mouseX, mouseY);
     }
     
-
+    
+    float oldX = location.x;
+    float oldY = location.y;
     
   
     location.add( PVector.div(velocity, 10) );
@@ -61,13 +63,13 @@ class Particule {
       velocity.y = -velocity.y;
     }
     strokeWeight(2);
+    stroke(color(red(col+100), green(col+100), blue(col+100)));
+    point(location.x,location.y);
+    noStroke();
     for (int i=0;i<mx; i++) {
-      color c = color(red(col-i*5), green(col-i*5), blue(col-i*5), 6 );
-      fill( c );
-      
-      stroke(color(red(col+100), green(col+100), blue(col+100)));
       point(location.x,location.y);
-      noStroke();
+      color c = color(red(col-i*5), green(col-i*5), blue(col-i*5), 6 );
+      fill( c );  
       ellipse(location.x, location.y, (mx-i)*r/3, (mx-i)*r/3);
     }
   }

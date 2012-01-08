@@ -1,0 +1,10 @@
+<div id="works-page">
+    <h1>Works</h1>
+    <ul>
+        <% this.collection.each(function(model){ %>
+            <li>
+                <%= model.get('title') %>
+            </li>
+        <% }); %>
+    </ul>
+</div>

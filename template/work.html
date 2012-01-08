@@ -1,0 +1,23 @@
+<div id="work-page" class="content">
+    <h1><%= this.model.get('title') %> >_</h1>
+    <br />
+    <div class="fadein">
+        <p class="subline"><%= this.model.get('desc') %></p>
+        <div class="visu-ct">
+            <% if(this.model.get('url')){ %>
+                <a target="_blank" class="visu" href="<%= this.model.get('url')%>">
+                    <span><img src="img/ext.png"/></span>
+            <% } %>
+                    <img src="img/media/<%= this.model.id %>/1.png" />
+            <% if(this.model.get('url')){ %>
+                </a>
+            <% } %>
+        </div>
+        <ul class="tags">
+            <% _.each(this.model.get('tag') , function(tag){ %>
+                <li><%= tag %></li>
+            <% }); %>
+        </ul>
+    </div>
+
+</div>

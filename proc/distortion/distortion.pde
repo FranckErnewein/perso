@@ -8,6 +8,12 @@ void setup(){
   source.loadPixels();
 }
 
+void setImage( String url, float w, float h ){
+  source = loadImage(url);
+  size(round(w), round(h));
+  source.loadPixels(); 
+}
+
 int getLoc(float x, float y){
    int loc = round(y)*source.width+round(x);
    if(loc > source.pixels.length-1 ){
