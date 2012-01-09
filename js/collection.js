@@ -14,5 +14,15 @@ collection.Sketchs = collection.Base.extend({
 
 collection.Works = collection.Base.extend({
 	model:model.Work,
-	name:'work'
+	name:'work',
+    getMobiles:function(){
+        return this.select(function(model){
+            return model.get('mobile');
+        });
+    },
+    getWebsites:function(){
+        return this.select(function(model){
+            return !model.get('mobile');
+        });
+    }
 });

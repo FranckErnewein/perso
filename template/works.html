@@ -1,6 +1,35 @@
 <div id="works-page" class="content">
     <h1>Works</h1>
     <div class="fadein">
+        <div class="iphone fl">
+            <div class="screen">
+                <h2>Mobile</h2>
+                <ul class="thumbs">
+                <% _.each(this.collection.getMobiles(), function(model){ %>
+                    <li>
+                        <a href="#work/<%= model.id %>"><img src="img/media/<%= model.id %>/1.png" alt="" /></a>
+                        <%= model.get('title') %>
+                    </li>
+                <% }); %>
+                </ul>
+            </div>
+            <div class="mask"></div>
+        </div>
+        <div class="imac fl">
+            
+            <div class="screen">
+                <h2>Website</h2>
+                <ul class="thumbs">
+                <% _.each(this.collection.getWebsites(), function(model){ %>
+                    <li>
+                        <a href="#work/<%= model.id %>"><img src="img/media/<%= model.id %>/1.png" alt="" /></a>
+                        <%= model.get('title') %>
+                    </li>
+                <% }); %>
+                </ul>
+            </div>
+            <div class="mask"></div>
+        </div>
         <ul>
         <% this.collection.each(function(model){ %>
             <li>

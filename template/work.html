@@ -13,18 +13,22 @@
    		<a href="#work/<%= this.model.next.id %>" title="next"><img src="img/next_sq.png" alt="next" /></a>
    	</div>	
     </div>
-    <div class="fadein">
-        <div class="visu-ct">
-            <% if(this.model.get('url')){ %>
-                <a target="_blank" class="visu" href="<%= this.model.get('url')%>">
-                    <span><img src="img/ext.png"/></span>
-            <% } %>
-                    <img src="img/media/<%= this.model.id %>/1.png" />
-            <% if(this.model.get('url')){ %>
-                </a>
-            <% } %>
+
+   
+    <div class="<%= (this.model.get('mobile'))? 'iphone' : 'imac' %>">
+
+        <div class="screen fadein">
+            <img src="img/media/<%= this.model.id %>/1.png" />
         </div>
         
+        <div class="mask"></div>
+        <% if(this.model.get('url')){ %>
+            <a target="_blank" class="mask-link" href="<%= this.model.get('url')%>">
+                <span>_</span>
+            </a>
+        <% } %>
+        
     </div>
+   
 
 </div>

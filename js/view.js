@@ -116,6 +116,12 @@ view.Work = view.Page.extend({
             });
         });
 
+        $('.imac a', this.el).hover(function(){
+           $(this).animate({opacity:1}).randomize( self.model.get('url') );
+        },function(){
+           $(this).animate({opacity:0}).text('_');
+        });
+
 
 
     }
