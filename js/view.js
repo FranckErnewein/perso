@@ -44,12 +44,13 @@ view.Menu = Backbone.View.extend({
 		var self = this;
 		$('li', this.el).each(function(){
 			var a = $('a', this);
-			var ul = $(document.createElement('ul') )
+			var ul = $(document.createElement('ul') ).hide();
 			ul.appendTo( this );
 			//self.sub[ a.attr('href').replace('#','') ] = ul;
 			self.sub[ a.attr('href').replace('#','') ] = $(this);
 		});
 	},
+
 
 	listen:function( collection ){
 		var self = this;
@@ -64,16 +65,20 @@ view.Menu = Backbone.View.extend({
 	},
 
     addItem:function(ul, model, tag){
-        ul.append( '<li class="'+tag+'"><a title="'+model.get('title')+'" href="#'+tag+'/'+model.id+'">'+( (tag != 'sketch') ? model.get('title') : '<img src="img/sketch/'+model.id+'.png"/>' )+'</a></li>' );
-        if(tag){
-            
-        }
+        //ul.append( '<li class="'+tag+'"><a title="'+model.get('title')+'" href="#'+tag+'/'+model.id+'">'+( (tag != 'sketch') ? model.get('title') : '<img src="img/sketch/'+model.id+'.png"/>' )+'</a></li>' );
+        ul.append( '<li><a title="'+model.get('title')+'" href="#'+tag+'/'+model.id+'">'+model.get('title')+'</a></li>' );
+        
     },
 	
-	open:function( submenu ){
+	open:function( submenu, item ){
 		//console.log(submenu, this.sub)
-		$('li.on', this.el).removeClass('on');
-		this.sub[ submenu ].addClass('on');
+
+        if(this.currentSubmenu != submenu){
+            $('li.on', this.el).removeClass('on').find('ul').slideUp();
+            this.sub[ submenu ].addClass('on').find('ul').slideDown();
+            this.currentSubmenu = submenu;
+        }
+		
 	}
 	
 });
@@ -120,7 +125,23 @@ view.Work = view.Page.extend({
 
 view.Works = view.Page.extend({
 
-	template:'works'
+	template:'works',
+     onRender:function(){
+        var self = this;
+        var h1 = $('h1', this.el);
+        var p = $('p', this.el);
+        var fade = $('.fadein', this.el);
+        
+        fade.hide();
+        
+
+        h1.randomize( null, 500, function(){
+            fade.fadeIn();    
+        });
+
+
+
+    }
 
 });
 
@@ -152,8 +173,18 @@ view.Sketch = view.Page.extend({
 });
 
 view.Sketchs = view.Page.extend({
-    template:'sketchs'
-    
+    template:'sketchs',
+    onRender:function(){
+        var content = $('.fadein');
+        var h1 = $('h1', this.el);
+        var p = $('.help', this.el);
+
+        content.hide();
+        
+        h1.randomize( h1.html()+' >_' , null, function(){
+            content.fadeIn();
+        });
+    }
 });
 
 

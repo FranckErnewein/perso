@@ -1,30 +1,27 @@
 <div id="sketch-page" class="content">
     <h1>Sketch</h1>
     <div class="fadein">
-        <img src="img/processing.png" alt="" />
+        
         <br /><br />
         <p>
-            Here you can found some personal <a href="#">Processing</a> experiments<br />
+            Here you can found some personal <a href="http://processing.org/">Processing</a> experiments<br />
             <br />
-            Sketchs display with <a href="#">Processingjs</a>.
+            Sketchs are display with <a href="http://processingjs.org/">Processingjs</a>.
         </p>
 
 
         <nav>
             <ul>
-            <% var i=0; %>
             <% this.collection.each(function( model ){ %>
             <li>
                 <a href="#sketch/<%= model.id %>" title="<%= model.get('title') %>">
-                    <% i++; %>
-                    <%= model.get('title') %>
-
+                    <img alt="<%= model.get('title') %>" src="img/sketch/<%= model.id %>.png" />
                 </a>
             </li>
             <% }); %>
             <ul>
         </nav>
 
-        <p>Interesting ? check the source on <a href="">Github</a></p>
+        <p>Interesting ? check the source code on <a href="https://github.com/FranckErnewein/perso/tree/master/processing">Github</a></p>
     </div>
 </div>

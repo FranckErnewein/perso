@@ -2,6 +2,12 @@
     <h1><%= this.model.get('title') %> >_</h1>
     <br />
     <div class="fadein">
+        <ul class="tags">
+            <% _.each(this.model.get('tag') , function(tag){ %>
+                <li><%= tag %></li>
+            <% }); %>
+        </ul>
+        <br />
         <p class="subline"><%= this.model.get('desc') %></p>
         <div class="visu-ct">
             <% if(this.model.get('url')){ %>
@@ -13,11 +19,7 @@
                 </a>
             <% } %>
         </div>
-        <ul class="tags">
-            <% _.each(this.model.get('tag') , function(tag){ %>
-                <li><%= tag %></li>
-            <% }); %>
-        </ul>
+        
     </div>
 
 </div>

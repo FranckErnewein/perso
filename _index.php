@@ -32,9 +32,9 @@
 				<h2>Front end developper</h2>
 			</hgroup>
 			<ul>
-				<li><a href="#sketch">+ Sketch</a></li>
-				<li><a href="#work">+ Works</a></li>
-				<li><a href="#about">+ About</a></li>
+				<li><a href="#sketch">Sketch</a></li>
+				<li><a href="#work">Works</a></li>
+				<li><a href="#about">About</a></li>
 			</ul>
 		</div>
 		<div id="page"></div>

@@ -6,19 +6,18 @@ body{overflow:scroll;}
 a{color:#000;}
 
 #nav{position:fixed;height:100%;width:20%;background:rgba(255,255,255,1);text-transform:uppercase;color:000;font-size:12px;text-align:left;}
-#nav h1 a{display:block;font-size:18px;padding:10px 0 0 0;color:#000;text-decoration:none !important;border-bottom:1px solid #000;}
-#nav h2{font-size:11px;margin-bottom:20px;}
+#nav h1 a{display:block;font-size:18px;padding:40px 0 0 25px;color:#000;text-decoration:none !important;}
+#nav h2{font-size:11px;margin-bottom:20px;padding:0 0 0 25px;}
 #nav ul{padding:5% 0;text-align:left;}
 #nav ul li{margin:15px 0;}
-#nav ul li a{display:inline-block;padding:0 4px;text-decoration:none;color:#000;border-left:120px solid #000;}
-#nav ul li.on a{background:#000;color:#fff;}
-#nav ul li ul{padding:0;display:none;}
+#nav ul li a{display:inline-block;padding:2px 4px;text-decoration:none;color:#000;border-left:120px solid #000;font-style:italic;}
+#nav ul li.on a{}
+#nav ul li ul{padding:0;}
 #nav ul li.on ul{display:block;}
-#nav ul li ul li a{border:0;padding:0;border-left:10px solid #000;}
+#nav ul li ul li a{border:0;padding:0;}
 #nav ul li ul li a:hover{border-color:yellow;}
-#nav ul li ul li.sketch{display:inline-block;width:auto;margin:5px;padding:0;}
-#nav ul li ul li.work{padding:0;margin:5px 0 5px 0;margin:0;border-bottom:1px solid #ddd;}
-#nav ul li ul li.work a{display:block;padding:4px 0 4px 25px;border:0 none #eee;text-transform:none;}
+#nav ul li ul li{padding:0;margin:5px 0 5px 0;margin:0;}
+#nav ul li ul li a{display:block;padding:6px 0 6px 25px;border:0 none #eee;text-transform:none;}
 #nav ul li.on ul li.work a{background:none;color:#000;}
 /*#nav ul li a:hover{background:rgba(0,0,0,0.8);color:#fff;}*/
 #nav ul li.on ul li.work a:hover,
@@ -71,21 +70,20 @@ a{color:#000;}
 #sketch-page{ }
 
 #sketch-page ul{padding:10px 0;font-size:14px;}
-#sketch-page ul li{padding:5px 0;}
-#sketch-page ul li a{border-left:15px solid #000;padding:1px 2px;text-decoration:none;}
-#sketch-page a:hover{background:yellow;}
+#sketch-page ul li{padding:5px;display:inline-block;}
+#sketch-page ul li a{display:inline-block;}
 
 
 #sketch-page canvas{display:block;padding:0;margin:0;outline:0 none;border:0 none;}
 
 .content .canvas-content{background:#000;display:inline-block;}
 .content{padding:10px 0 10px 21%;}
-.content h1{padding:10px;font-size:35px;margin:0;padding:1% 0 0 0;}
-.content p{color:#777;font-size:12px;}
+.content h1{font-size:35px;margin:0;padding:30px 0 0 0;}
+.content p{color:#777;font-size:12px;font-family:arial, sans-serif;}
 .content p a{color:#000;}
 .content p.help{color:#000;font-size:11px;padding:2px;display:inline;margin-top:10px;background:yellow;border-bottom:1px solid #fff;}
 .content .tags{padding:10px 0;}
-.content .tags li{background:yellow;display:inline-block;margin:0 10px 0 0;padding:1px 2px;font-size:12px;border-left:14px solid #000;}
+.content .tags li{background:yellow;display:inline-block;margin:0 10px 0 0;padding:1px 2px;font-size:12px;}
 
 .content .visu-ct img{border:5px solid #fff;box-shadow:0 0 5px #ccc;}
 

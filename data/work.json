@@ -36,13 +36,11 @@
 	{
 		"id":"gestionflexible",
 		"title":"BNP Paribas",
-		"url":"http://generali.fr",
 		"tag":[ "HTML", "Javascript", "CSS" ]
 	},
 	{
 		"id":"jegere",
 		"title":"Banque Populaire",
-		"url":"http://generali.fr",
 		"tag":[ "HTML", "Javascript", "CSS" ]
 	},
 	{
@@ -54,7 +52,7 @@
 	{
 		"id":"antoine",
 		"title":"Antoine Espace Vert",
-		"url":"http://www.vision-one.fr/",
+		"url":"http://www.antoine-ev.fr/",
 		"tag":[ "HTML", "Javascript", "CSS", "Design", "PHP" ]
 	}
 ]

@@ -1,10 +1,13 @@
-<div id="works-page">
+<div id="works-page" class="content">
     <h1>Works</h1>
-    <ul>
+    <div class="fadein">
+        <ul>
         <% this.collection.each(function(model){ %>
             <li>
                 <%= model.get('title') %>
             </li>
         <% }); %>
-    </ul>
+        </ul>
+    </div>
+    
 </div>
