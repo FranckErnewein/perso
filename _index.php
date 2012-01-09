@@ -25,12 +25,15 @@
 </head>
 <body>
 <div id="global">
+	<div class="fx-mask"></div>
+	<div id="head">
+		<hgroup>
+			<h1><a href="#">Franck Ernewein</a></h1>
+			<h2>Front end developper</h2>
+		</hgroup>
+	</div>
 	<div id="content">
 		<div id="nav">
-			<hgroup>
-				<h1><a href="#">Franck Ernewein</a></h1>
-				<h2>Front end developper</h2>
-			</hgroup>
 			<ul>
 				<li><a href="#sketch">Sketch</a></li>
 				<li><a href="#work">Works</a></li>

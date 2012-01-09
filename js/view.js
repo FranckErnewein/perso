@@ -184,6 +184,15 @@ view.Sketchs = view.Page.extend({
         h1.randomize( h1.html()+' >_' , null, function(){
             content.fadeIn();
         });
+        
+        $('.thumbs a', this.el).each(function(i, a){
+        	var span = $('span', a);
+        	var text = span.text();
+        	$(a).mouseenter(function(e){
+        		span.randomize(text)
+        	});
+        });
+        
     }
 });
 

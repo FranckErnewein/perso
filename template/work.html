@@ -1,14 +1,19 @@
 <div id="work-page" class="content">
     <h1><%= this.model.get('title') %> >_</h1>
-    <br />
-    <div class="fadein">
-        <ul class="tags">
+    <div class="details">
+    	<div class="ct">
+    		<ul class="tags">
             <% _.each(this.model.get('tag') , function(tag){ %>
                 <li><%= tag %></li>
             <% }); %>
         </ul>
-        <br />
-        <p class="subline"><%= this.model.get('desc') %></p>
+    	</div>
+   	<div class="arrows">
+   		<a href="#work/<%= this.model.prev.id %>" title="previous"><img src="img/prev_sq.png" alt="previous" /></a>
+   		<a href="#work/<%= this.model.next.id %>" title="next"><img src="img/next_sq.png" alt="next" /></a>
+   	</div>	
+    </div>
+    <div class="fadein">
         <div class="visu-ct">
             <% if(this.model.get('url')){ %>
                 <a target="_blank" class="visu" href="<%= this.model.get('url')%>">

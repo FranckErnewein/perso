@@ -1,6 +1,13 @@
 <div id="sketch-page" class="content">
     <h1><%= this.model.get('title') %></h1>
-    <p class="help subline">_</p>
-    <br />
+    <div class="details">
+    	<div class="ct">
+    		<p class="help subline">_</p>
+    	</div>
+   	<div class="arrows">
+   		<a href="#sketch/<%= this.model.prev.id %>" title="previous"><img src="img/prev_sq.png" alt="previous" /></a>
+   		<a href="#sketch/<%= this.model.next.id %>" title="next"><img src="img/next_sq.png" alt="next" /></a>
+   	</div>	
+    </div>
     <div class="canvas-content"></div>
 </div>

@@ -2,26 +2,26 @@
     <h1>Sketch</h1>
     <div class="fadein">
         
-        <br /><br />
-        <p>
+        <nav>
+            <ul class="thumbs">
+            <% this.collection.each(function( model ){ %>
+	            <li>
+	                <a href="#sketch/<%= model.id %>">
+	                    <img alt="<%= model.get('title') %>" src="img/sketch/m_<%= model.id %>.png" />
+	                    <span><%= model.get('title') %></span>
+	                </a>
+	            </li>
+            <% }); %>
+            <ul>
+        </nav>
+        
+        <p class="clr">
+	        	<br />
             Here you can found some personal <a href="http://processing.org/">Processing</a> experiments<br />
             <br />
             Sketchs are display with <a href="http://processingjs.org/">Processingjs</a>.
         </p>
-
-
-        <nav>
-            <ul>
-            <% this.collection.each(function( model ){ %>
-            <li>
-                <a href="#sketch/<%= model.id %>" title="<%= model.get('title') %>">
-                    <img alt="<%= model.get('title') %>" src="img/sketch/<%= model.id %>.png" />
-                </a>
-            </li>
-            <% }); %>
-            <ul>
-        </nav>
-
+			<br />
         <p>Interesting ? check the source code on <a href="https://github.com/FranckErnewein/perso/tree/master/processing">Github</a></p>
     </div>
 </div>
