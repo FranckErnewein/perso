@@ -16,6 +16,7 @@ view.TemplateView = Backbone.View.extend({
             if(!this.template){
                 throw new Error('template is undefined');
             }
+            /*
             $.ajax({
                 cache:false,
                 url:'template/' + this.template + '.html',
@@ -24,6 +25,8 @@ view.TemplateView = Backbone.View.extend({
                     self.templateList[self.template] = _.template( xhr );
                 }
             });
+            */
+            self.templateList[self.template] = _.template($('#tpl-' + self.template ).html());
          
         }
         $(this.el).html(this.templateList[this.template].call( this , this.model ));

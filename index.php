@@ -18,10 +18,15 @@
 	<script src="js/router.js"></script>
 	<script src="js/view.js"></script>
 	<script src="js/app.js"></script>
-    <script>
+   <script>
         app.collection.sketchs.add( <?php include 'data/sketch.json'; ?>);
         app.collection.works.add( <?php include 'data/work.json'; ?>);
     </script>
+    <script type="text/html" id="tpl-work"><?php include 'template/work.html'; ?></script>
+    <script type="text/html" id="tpl-works"><?php include 'template/works.html'; ?></script>
+    <script type="text/html" id="tpl-sketch"><?php include 'template/sketch.html'; ?></script>
+    <script type="text/html" id="tpl-sketchs"><?php include 'template/sketchs.html'; ?></script>
+    <script type="text/html" id="tpl-abouts"><?php include 'template/abouts.html'; ?></script>
 </head>
 <body>
 <div id="global">
