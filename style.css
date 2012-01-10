@@ -121,7 +121,7 @@ a{color:#000;}
 #home{padding:0 0 0 240px;color:#ccc;}
 #home h1{font-size:100px;border:0 none;padding:30px;border-bottom:1px solid #ccc;font-weight:bold;}
 #home p{font-size:70px;padding:30px;}
-#home .square{width:300px;height:200px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
+#home .square{width:240px;height:300px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
 #home .square2{width:100px;height:100px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
 #home .nav{border-bottom:1px solid #ccc;}
 #home .nav a{border-right:1px solid #ccc;display:block;float:left;padding:20px 30px;color:#000;text-decoration:none;font-size:30px;color:#777;}
