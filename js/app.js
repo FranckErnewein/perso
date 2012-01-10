@@ -16,7 +16,7 @@ $(document).ready(function(){
 	_.each(app.collection, function(col){
 		col.each(function(item, i){
 			item.next = (i < col.size()-1)? col.at(i+1) : col.at(0);
-			item.prev = (i < 0)? col.at(i-1) : col.at(col.size()-1);
+			item.prev = (i > 0)? col.at(i-1) : col.at(col.size()-1);
 		});
 	});
 	

@@ -241,7 +241,26 @@ view.Processing = Backbone.View.extend({
 });
 
 view.Abouts = view.Page.extend({
-	template:'work'
+	template:'abouts',
+	
+	onRender:function(){
+		
+		$('h1', this.el).randomize();
+		
+		$('#about-me div').each(function(i){
+			var div = $(this);
+			div.hide();
+			window.setTimeout(function(){div.slideDown();}, i*300)
+			var h2 = $('h2', this);
+			var tit = h2.html();
+			div.mouseenter(function(){ h2.randomize(tit) })
+		});
+		
+		var a = $('#email');
+		var email = a.html().replace('(at)', '@').replace(/\(dot\)/g, '.');
+		a.attr('href',  'mailto:'+email).text(email)
+		
+	}
 });
 
 

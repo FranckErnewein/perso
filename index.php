@@ -40,9 +40,9 @@
 	<div id="content">
 		<div id="nav">
 			<ul>
-				<li><a href="#sketch">Sketch</a></li>
-				<li><a href="#work">Works</a></li>
-				<li><a href="#about">About</a></li>
+				<li><a class="lvl1" href="#sketch">Sketch</a></li>
+				<li><a class="lvl1" href="#work">Works</a></li>
+				<li><a class="lvl1" href="#about">About</a></li>
 			</ul>
 		</div>
 		<div id="page"></div>
