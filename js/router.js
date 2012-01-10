@@ -49,14 +49,20 @@ router.Main = Backbone.Router.extend({
 
             var viewName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
 
-            
-
-            if(itemId){
-                this.currentPage = new view[ viewName ]({el:domNode, model:app.collection[pageName + 's'].get( itemId) });
+            if( itemId && !view[ viewName ] || !view[ viewName+'s' ]){
+            	viewName = 'Home';
+            	this.currentPage = new view[ viewName ]({el:domNode});
+            	console.log(this.currentPage)
             }else{
-                viewName += 's';
-                this.currentPage = new view[ viewName ]({el:domNode, collection:app.collection[pageName + 's'] });
+            	if(itemId){
+                    this.currentPage = new view[ viewName ]({el:domNode, model:app.collection[pageName + 's'].get( itemId) });
+                }else{
+                    viewName += 's';
+                    this.currentPage = new view[ viewName ]({el:domNode, collection:app.collection[pageName + 's'] });
+                }
             }
+
+            
 
 
             

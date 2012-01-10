@@ -78,7 +78,9 @@ view.Menu = Backbone.View.extend({
 
         if(this.currentSubmenu != submenu){
             $('li.on', this.el).removeClass('on').find('ul').slideUp();
-            this.sub[ submenu ].addClass('on').find('ul').slideDown();
+            if(this.sub[ submenu ]){            	
+            	this.sub[ submenu ].addClass('on').find('ul').slideDown();
+            }
             this.currentSubmenu = submenu;
         }
 		
@@ -261,6 +263,16 @@ view.Abouts = view.Page.extend({
 		a.attr('href',  'mailto:'+email).text(email)
 		
 	}
+});
+
+view.Home = view.Page.extend({
+	
+	template:'home',
+	
+	onRender:function(){
+		$('h1', this.el).randomize('Welcome >_', 1000);
+	}
+	
 });
 
 

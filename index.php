@@ -27,6 +27,7 @@
     <script type="text/html" id="tpl-sketch"><?php include 'template/sketch.html'; ?></script>
     <script type="text/html" id="tpl-sketchs"><?php include 'template/sketchs.html'; ?></script>
     <script type="text/html" id="tpl-abouts"><?php include 'template/abouts.html'; ?></script>
+    <script type="text/html" id="tpl-home"><?php include 'template/home.html'; ?></script>
 </head>
 <body>
 <div id="global">
