@@ -2,19 +2,18 @@
 	{
 		"id":"hiram",
 		"title":"Hiram Finance",
+        "url":"http://www.hiram-finance.com/",
         "tag":[ "HTML", "Javascript", "CSS" ]
 	},
     {
 		"id":"connexme",
 		"title":"connexMe",
-		"url":"http://www.epargne-hisseo.com/",
 		"tag":[ "Javascript", "iPhone", "Android", "PhoneGap" ],
         "mobile":true
 	},
     {
 		"id":"connexmelite",
 		"title":"connexMe Lite",
-		"url":"http://www.epargne-hisseo.com/",
 		"tag":[ "HTML", "WebApp", "CSS", "Java" ],
         "mobile":true
 	},

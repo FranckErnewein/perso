@@ -142,7 +142,8 @@ view.Works = view.Page.extend({
         
 
         h1.randomize( null, 500, function(){
-            fade.fadeIn();    
+            fade.fadeIn();
+            $('.thumbs-works a').randomize(null, 1500);
         });
 
 
@@ -236,7 +237,7 @@ view.Processing = Backbone.View.extend({
 
 });
 
-view.About = view.Page.extend({
+view.Abouts = view.Page.extend({
 	template:'work'
 });
 
