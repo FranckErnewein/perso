@@ -1,25 +1,47 @@
 <div id="home" class="content">
 	
     
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
     <!--
-    <h1>Hello >_</h1>
-    <div class="details">
-        
-        <div>
-            <a href="#sketch">
-                <% app.collection.sketchs.each(function(model){ %>
-                    <img src="img/sketch/<%= model.id %>.png" />
-                <% }); %>
-                <img src="img/next_sq.png"/>
-            </a>
-        </div>
-        
-
-    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
     -->
+    <h1>Welcome</h1>
+    
+     
+	 <div class="home-box sketch">
+	    <h3>Sketch</h3>
+	    	<p>
+         <% app.collection.sketchs.each(function(model){ %>
+             <img src="img/sketch/<%= model.id %>.png" class="visu"/>
+         <% }); %>
+	    	</p>
+         <p class="clr">
+         	Some realisations with Processing
+         </p>
+         <a href="#sketch" class="go"><img src="img/next_sq.png" /></a>
+     </div>
+
+     <div class="home-box works">
+     		<h3>Works</h3>
+     		<img src="img/screen.png" alt="" class="visu-work" />
+     		<p>
+				Websites and mobiles app that I realised
+     		</p>
+     		<div class="clr"></div>
+     		<a href="#works" class="go"><img src="img/next_sq.png"/></a>
+     </div>
+     
+     <div class="home-box">
+     		<h3>About me</h3>
+     		<p>
+     			Contact me,<br /> 
+     			Download my CV,<br /> 
+     			and more ...</p>
+     		<a href="#about" class="go"><img src="img/next_sq.png" /></a>
+     </div>
+     
+
 	
 	<div class="square"></div>
 </div>

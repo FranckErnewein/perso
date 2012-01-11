@@ -274,7 +274,22 @@ view.Home = view.Page.extend({
 	template:'home',
 	
 	onRender:function(){
-		$('h1', this.el).randomize(null, 1000);
+		var boxes = $('.home-box');
+		boxes.hide();
+		
+		$('h1', this.el).randomize(null, null, function(){
+			boxes.each(function(i){
+				var box = $(this).hide();
+				var h3 = $('h3', this);
+				var tit = h3.text();
+				window.setTimeout(function(){box.slideDown()}, i*200);
+				$('a', this).mouseenter(function(){
+					h3.randomize(tit);
+				});
+				
+				
+			});
+		});
 	}
 	
 });
