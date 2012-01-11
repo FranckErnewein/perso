@@ -51,10 +51,9 @@ router.Main = Backbone.Router.extend({
 
             if( itemId && !view[ viewName ] || !view[ viewName+'s' ]){
             	viewName = 'Home';
-            	this.currentPage = new view[ viewName ]({el:domNode});
-            	console.log(this.currentPage)
+            	this.currentPage = new view[ viewName ]({el:domNode, collection:app.collection[pageName + 's'] });
             }else{
-            	if(itemId){
+            	if(itemId && app.collection[pageName + 's'].get( itemId)){
                     this.currentPage = new view[ viewName ]({el:domNode, model:app.collection[pageName + 's'].get( itemId) });
                 }else{
                     viewName += 's';
