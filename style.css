@@ -129,9 +129,9 @@ a{color:#000;}
 */
 
 
-#home .home-box{height:300px;float:left;border:1px solid #ccc;position:relative;padding:35px 80px 50px 35px;margin:-1px 0 0 -1px;}
+#home .home-box{height:300px;width:380px;float:left;border-right:1px solid #ccc;border-bottom:1px solid #ccc;position:relative;padding:35px 0 0 35px;}
 #home .home-box .visu{display:block;float:left;}
-#home .home-box h3{text-transform:uppercase;}
+#home .home-box h3{text-transform:uppercase;height:20px;}
 #home .mosa{width:216px;border-left:1px solid #777;border-top:1px solid #777;}
 #home .mosa img{border-right:1px solid #777;border-bottom:1px solid #777;}
 #home .go{position:absolute;top:0;left:0;height:100%;width:100%;}

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr-fr">
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<title>Franck Ernewein</title>
 	<meta name="author" content="Franck Ernewein" />
+	<meta name="keywords" content="CV, Franck Ernewein, Integrateur, Ajax, Web 2.0, HTML, XHTML, XML, XSL, CSS, Javascript, Jquery, Flash, AS2, AS3, Design, Action Script, Ergonomie, Accessibilité, Sémantique, Référencement, CDI, PHP, Ruby" />
+	<meta name="description" content="Franck Ernewein, Front End Developer" />
 	<style type="text/css">
 		@import url(reset.css);
 		@import url(style.css);
@@ -35,7 +37,7 @@
 	<div id="head">
 		<hgroup>
 			<h1><a href="#">Franck Ernewein</a></h1>
-			<h2>Front end developper</h2>
+			<h2>Front end developer</h2>
 		</hgroup>
 	</div>
 	<div id="content">
