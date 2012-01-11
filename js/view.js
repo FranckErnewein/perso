@@ -52,6 +52,10 @@ view.Menu = Backbone.View.extend({
 			//self.sub[ a.attr('href').replace('#','') ] = ul;
 			self.sub[ a.attr('href').replace('#','') ] = $(this);
 		});
+
+        //fix fixed
+        
+
 	},
 
 
@@ -270,7 +274,7 @@ view.Home = view.Page.extend({
 	template:'home',
 	
 	onRender:function(){
-		$('h1', this.el).randomize('Welcome >_', 1000);
+		$('h1', this.el).randomize(null, 1000);
 	}
 	
 });
