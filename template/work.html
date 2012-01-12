@@ -1,4 +1,4 @@
-<div id="work-page" class="content">
+<section id="work-page" class="content">
     <h1><%= this.model.get('title') %> >_</h1>
     <div class="details">
     	<div class="ct">
@@ -15,7 +15,7 @@
     </div>
 
    
-    <div class="<%= (this.model.get('mobile'))? 'iphone' : 'imac' %>">
+    <article class="<%= (this.model.get('mobile'))? 'iphone' : 'imac' %>">
 
         <div class="screen fadein">
             <img src="img/media/<%= this.model.id %>/1.png" />
@@ -28,7 +28,7 @@
             </a>
         <% } %>
         
-    </div>
+    </article>
    
 
-</div>
+</section>

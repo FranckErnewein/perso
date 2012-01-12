@@ -1,10 +1,10 @@
-<div id="works-page" class="content">
+<section id="works-page" class="content">
     <h1>Works</h1>
     <div class="fadein">
         <div class="iphone fl">
             
             <div class="mask"></div>
-            <div class="screen">
+            <nav class="screen">
 
                 <ul class="thumbs-works">
                 <% _.each(this.collection.getMobiles(), function(model){ %>
@@ -13,13 +13,13 @@
                     </li>
                 <% }); %>
                 </ul>
-            </div>
+            </nav>
         </div>
         <div class="imac fl">
             
             
             <div class="mask"></div>
-            <div class="screen">
+            <nav class="screen">
 
                 <ul class="thumbs-works">
                 <% _.each(this.collection.getWebsites(), function(model){ %>
@@ -28,9 +28,9 @@
                     </li>
                 <% }); %>
                 </ul>
-            </div>
+            </nav>
         </div>
         
     </div>
     
-</div>
+</section>

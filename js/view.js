@@ -102,6 +102,12 @@ view.Page = view.TemplateView.extend({
 view.Work = view.Page.extend({
 	
 	template:'work',
+	
+	abbr:{
+		'HTML':'HyperText Markup Language',
+		'CSS':'Cascading Style Sheet',
+		'PHP':'Preprocesseur HyperText'
+	},
 
     onRender:function(){
         var self = this;
@@ -114,11 +120,19 @@ view.Work = view.Page.extend({
         fade.hide();
         if(!self.model.get('desc')) p.hide();
         
+        
+        
         h1.randomize( null, 500, function(){
             if(self.model.get('desc')) p.randomize();
             fade.fadeIn();
             tags.each(function(i, tag){
                var tag = $(tag);
+               var txt = tag.text();
+               if( self.abbr[txt] ){
+            	   var abbr = $(document.createElement('abbr')).text(txt).attr('title' ,  self.abbr[txt] );
+            	   tag.html( abbr );
+               }
+               
                window.setTimeout(function(){
                   tag.fadeIn();
                }, i*320);
