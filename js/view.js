@@ -267,7 +267,7 @@ view.Abouts = view.Page.extend({
 		
 		$('h1', this.el).randomize();
 		
-		$('#about-me div').each(function(i){
+		$('#about-me section').each(function(i){
 			var div = $(this);
 			div.hide();
 			window.setTimeout(function(){div.slideDown();}, i*300)
