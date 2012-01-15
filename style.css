@@ -18,7 +18,7 @@ a{color:#000;}
 #head hgroup h2{font-size:11px;}
 
 
-#nav{position:fixed;height:100%;width:240px;background:#f6f7f2;text-transform:uppercase;color:000;font-size:12px;border-right:1px solid #ccc;}
+#nav{position:absolute;height:auto;width:240px;background:#f6f7f2;text-transform:uppercase;color:000;font-size:12px;border-right:1px solid #ccc;}
 #nav ul{padding:10px 0;text-align:left;}
 #nav ul li{margin:15px 0;}
 #nav ul li a{display:block;padding:6px 4px 6px 15px;text-decoration:none;color:#000;font-size:13px;font-weight:bold;}

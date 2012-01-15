@@ -1,4 +1,14 @@
 
+var IS_TOUCH_DEVICE;
+try{
+    document.createEvent("TouchEvent");
+    IS_TOUCH_DEVICE = true;
+}catch(e){
+    IS_TOUCH_DEVICE = false;
+}
+
+
+
 var app = {
 	model:{},
 	collection:{
@@ -26,6 +36,11 @@ $(document).ready(function(){
 	
 	app.view.menu.listen(app.collection.sketchs);
 	app.view.menu.listen(app.collection.works);
+
+    if(!IS_TOUCH_DEVICE){
+        $('#nav').css({'position':'fixed'});
+    }
+
 	
 	//app.collection.sketchs.fetch({add:true});
 	//app.collection.works.fetch({add:true});
