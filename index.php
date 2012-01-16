@@ -6,7 +6,7 @@
 	<meta name="author" content="Franck Ernewein" />
 	<meta name="keywords" content="CV, Franck Ernewein, Integrateur, Ajax, Web 2.0, HTML, XHTML, XML, XSL, CSS, Javascript, Jquery, Flash, AS2, AS3, Design, Action Script, Ergonomie, Accessibilité, Sémantique, Référencement, CDI, PHP, Ruby" />
 	<meta name="description" content="Franck Ernewein, Front End Developer" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	<style type="text/css">
 		@import url(reset.css);
 		@import url(style.css);
