@@ -33,8 +33,15 @@
 		"id":"particule",
 		"title":"Firefly"
 	},
+	
 	{
 		"id":"invasion",
 		"title":"Frozen Invasion"
-	}
+	},
+	{
+        "id":"circleline",
+		  "title":"Circle Line",
+        "help":"left click to add more line / right click to clear"
+    }
+	
 ]
