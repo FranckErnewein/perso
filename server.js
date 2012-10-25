@@ -1,6 +1,7 @@
 
 var express = require('express');
 var fs = require('fs');
+var port = 1983;
 
 
 var file = fs.readFileSync( 'index.html' ).toString();
@@ -20,6 +21,7 @@ app.get( '/', function (req, res){
 });
 
 
-app.listen( 1983 );
+app.listen( port );
+console.log( 'app running on port ' + port );
 
 
